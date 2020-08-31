@@ -173,7 +173,14 @@ extension MonthlyCalendarManagerDirectAccess {
     func scrollBackToToday() {
         calendarManager.scrollBackToToday()
     }
-
+    func moveforward() {
+        let index = calendarManager.listManager.currentPageIndex
+        calendarManager.listManager.scroll(to: index + 1)
+    }
+    func moveBack() {
+        let index = calendarManager.listManager.currentPageIndex
+        calendarManager.listManager.scroll(to: index - 1)
+    }
 }
 
 private extension Calendar {

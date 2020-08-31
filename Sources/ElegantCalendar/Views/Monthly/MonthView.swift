@@ -31,11 +31,11 @@ struct MonthView: View, MonthlyCalendarManagerDirectAccess {
                 .padding(.leading, CalendarConstants.Monthly.outerHorizontalPadding)
                 .onTapGesture { self.communicator?.showYearlyView() }
             weeksViewWithDaysOfWeekHeader
-            if selectedDate != nil {
-                calenderAccessoryView
-                    .padding(.leading, CalendarConstants.Monthly.outerHorizontalPadding)
-                    .id(selectedDate!)
-            }
+//            if selectedDate != nil {
+//                calenderAccessoryView
+//                    .padding(.leading, CalendarConstants.Monthly.outerHorizontalPadding)
+//                    .id(selectedDate!)
+//            }
             Spacer()
         }
         .padding(.top, CalendarConstants.Monthly.topPadding)
@@ -50,7 +50,7 @@ private extension MonthView {
         HStack {
             VStack(alignment: .leading) {
                 monthText
-                yearText
+//                yearText
             }
             Spacer()
         }

@@ -42,9 +42,8 @@ struct DayView: View, MonthlyCalendarManagerDirectAccess {
             .foregroundColor(foregroundColor)
             .frame(width: CalendarConstants.Monthly.dayWidth, height: CalendarConstants.Monthly.dayWidth)
             .background(backgroundColor)
-            .clipShape(Circle())
             .opacity(opacity)
-            .overlay(isSelected ? CircularSelectionView() : nil)
+            .cornerRadius(10)
             .onTapGesture(perform: notifyManager)
     }
 
@@ -53,8 +52,8 @@ struct DayView: View, MonthlyCalendarManagerDirectAccess {
     }
 
     private var foregroundColor: Color {
-        if isDayToday {
-            return theme.primary
+        if isSelected {
+            return Color.white
         } else {
             return .primary
         }
@@ -62,11 +61,8 @@ struct DayView: View, MonthlyCalendarManagerDirectAccess {
 
     private var backgroundColor: some View {
         Group {
-            if isDayToday {
-                Color.primary
-            } else if isDaySelectableAndInRange {
+            if isSelected {
                 theme.primary
-                    .opacity(datasource?.calendar(backgroundColorOpacityForDate: day) ?? 1)
             } else {
                 Color.clear
             }

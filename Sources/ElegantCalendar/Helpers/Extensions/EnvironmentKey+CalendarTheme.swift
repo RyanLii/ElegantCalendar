@@ -24,6 +24,7 @@ public extension CalendarTheme {
     static let orangeYellow = CalendarTheme(primary: .orangeYellow)
     static let red = CalendarTheme(primary: .red)
     static let royalBlue = CalendarTheme(primary: .royalBlue)
+    static let kicAccent = CalendarTheme(primary: .kicAccent)
 
 }
 
@@ -58,5 +59,10 @@ private extension Color {
     static let orangeYellow = Color("orangeYellow")
     static let red = Color("red")
     static let royalBlue = Color("royalBlue")
+    static let kicAccent =  Color(UIColor.kicAccent)
+}
 
+extension UIColor {
+    static let kicAccent = #colorLiteral(red: 0.5529411765, green: 0.8784313725, blue: 0.8392156863, alpha: 1)
+    static let kicSecondary = #colorLiteral(red: 0.7111613154, green: 0.9227588773, blue: 0.899078846, alpha: 1)
 }
